@@ -1,4 +1,6 @@
-<section>
-	<p>{{ minutos }}:{{ segundos }}</p>	
-	<button (click)="togglePause()">{{ buttonLabel }}</button>
+<section class="container">
+	<div class="text-center">
+		<h1>{{ minutos }}:{{ segundos | number: '2.0' }}</h1>	
+	<button class="btn btn-danger" (click)="togglePause()">{{ buttonLabel }}</button>	
+	</div>
 </section>
