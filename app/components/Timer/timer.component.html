@@ -1,6 +1,7 @@
 <section class="container">
 	<div class="text-center">
 		<h1>{{ minutos }}:{{ segundos | number: '2.0' }}</h1>	
-	<button class="btn btn-danger" (click)="togglePause()">{{ buttonLabel }}</button>	
+	<button class="btn btn-danger" (click)="togglePause()">{{ buttonLabel }}</button>
+	<countdown [seconds]="60" (complete)="onCountdownCompleted()"></countdown>	
 	</div>
 </section>

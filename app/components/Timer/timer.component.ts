@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
 	moduleId: module.id,
-    selector: 'my-appv',
+    selector: 'timer',
     templateUrl: 'timer.component.html',
     styleUrls: ['timer.component.css']
 })
@@ -43,6 +43,10 @@ export class TimerComponent {
 		if ( this.minutos < 24 ||  this.segundos < 60 ) {
 			this.buttonLabel = this.isPaused ? 'Reanudar' : 'Detener';	
 		}
+	}
+
+	onCountdownCompleted(): void {
+		//alert('Tiempo acabado');
 	}
 }
 
