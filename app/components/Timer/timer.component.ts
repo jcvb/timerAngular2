@@ -46,7 +46,7 @@ export class TimerComponent {
 	}
 
 	onCountdownCompleted(): void {
-		//alert('Tiempo acabado');
+		alert('Tiempo acabado');
 	}
 }
 

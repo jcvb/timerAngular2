@@ -1,10 +1,11 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
 	moduleId: module.id,
 	selector: 'countdown',
 	templateUrl: 'countdown.component.html',
-	styleUrls: ['countdown.component.css']
+	styleUrls: ['countdown.component.css'],
+	encapsulation: ViewEncapsulation.Emulated
 })
 export class CountdownComponent{
 	
@@ -13,13 +14,14 @@ export class CountdownComponent{
 	intervalId : number;
 	
 	@Output() complete: EventEmitter<any> = new EventEmitter();
+	@Output() progress: EventEmitter<number> = new EventEmitter();
 
 	constructor() {
-		this.intervalId = setInterval(() => this.tick(),1000);
+		this.intervalId = window.setInterval(() => this.tick(),1000);
 	}
 
 	private tick(): void {
-		if ( --this.seconds < 0 ) {
+		if ( --this.seconds < 1 ) {
 			clearTimeout(this.intervalId);
 			this.complete.emit(null);
 		}
